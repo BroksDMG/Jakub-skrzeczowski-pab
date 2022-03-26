@@ -1,25 +1,9 @@
 {
-  "name": "Jakub-skrzeczowski-pab",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "devDependencies": {
+    "@types/node": "^17.0.23"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/BroksDMG/Jakub-skrzeczowski-pab.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/BroksDMG/Jakub-skrzeczowski-pab/issues"
-  },
-  "homepage": "https://github.com/BroksDMG/Jakub-skrzeczowski-pab#readme",
   "dependencies": {
-    "@types/node": "^17.0.21",
     "express": "^4.17.3",
-    "typescript": "^4.6.2"
+    "typescript": "^4.6.3"
   }
 }
