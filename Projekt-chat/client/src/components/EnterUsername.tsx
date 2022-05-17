@@ -1,4 +1,4 @@
-import React from 'react'
+ import React from 'react'
 
 const EnterUsername = (props: {handleConnection: Function, username: string, setUsername: Function}) => {
     return (

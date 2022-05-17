@@ -1,10 +1,16 @@
 import React from "react";
+import User from './User'
 
-const connectedUsers = ()=>{
+const ConnectedUsers = (props:{connectedUsers:{id:string;username:string;}[]})=>{
     return(
-        <div>
-
+        <div className="connected-users">
+            <h2>Connected Users</h2>
+            <ul>
+                {props.connectedUsers.map(user=>(
+                    <User key={user.id} user={user}/>
+                ))}
+            </ul>
         </div>
     )
 }
-export default connectedUsers;
+export default ConnectedUsers;

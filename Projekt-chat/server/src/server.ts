@@ -9,30 +9,31 @@ const app = express();
 
 const server = http.createServer(app);
 
-
-
-
-
 const io = new Server(server,{cors:{origin:"http://localhost:3000"}});
+
+
+
+
 
 io.on("connection",(socket)=>{
     socket.join ("myChat");
+
     socket.on("handle-connection", (username:string)=>{
         if(!userJoin(socket.id, username)){
             socket.emit("username-taken")
         }else{
-            socket.emit("username-submitted-succesfuly");
-            io.to("myChat").emit("get-connected-users",getUsers())
+            socket.emit("username-submitted-successfully");
+            io.to("myChat").emit("get-connected-users",getUsers());
         }
 
-    })
-
+    });
+    console.log("clien connected")
     socket.on("disconnect",()=>{
         userLeave(socket.id);
     })
 })
 
-server.listen(5000, ()=> console.log("server listen on port 5000."))
+server.listen(5001, ()=> console.log("server listen on port 5001."))
 
 // //set static folder to acces front
 // app.use(express.static(path.join(__dirname, 'public')));
