@@ -27,13 +27,15 @@ io.on("connection",(socket)=>{
         }
 
     });
-    console.log("clien connected")
+    socket.on("message",(message:{message:string;username:string})=>{
+        socket.broadcast.to("myChat").emit("receive-message", message)
+    });
     socket.on("disconnect",()=>{
         userLeave(socket.id);
     })
 })
 
-server.listen(5001, ()=> console.log("server listen on port 5001."))
+server.listen(5002, ()=> console.log("server listen on port 5002."))
 
 // //set static folder to acces front
 // app.use(express.static(path.join(__dirname, 'public')));

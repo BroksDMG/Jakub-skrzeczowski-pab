@@ -1,6 +1,10 @@
  import React from 'react'
 
-const EnterUsername = (props: {handleConnection: Function, username: string, setUsername: Function}) => {
+const EnterUsername = (props: {
+    handleConnection: Function, 
+    username: string, 
+    setUsername: Function
+}) => {
     return (
         <form className="enter-username-form" onSubmit={e => {
             e.preventDefault();
